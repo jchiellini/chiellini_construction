@@ -1,0 +1,46 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+<div class="container" ng-init="Init()">
+  <div class="row">
+    <div class="col-sm-12">
+      <form class="form" name="form" ng-submit="register(form)" novalidate>
+        <div>
+          <h3>New Property</h3>
+        </div>
+        <div class="form-group" ng-class="{ 'has-success': form.name.$valid && submitted,
+                                            'has-error': form.name.$invalid && submitted }">
+          <label>Street Name</label>
+
+          <input type="text" name="street" class="form-control" ng-model="active_property.street"/>
+
+        </div>
+
+        <div class="form-group" ng-class="{ 'has-success': form.name.$valid && submitted,
+                                            'has-error': form.name.$invalid && submitted }">
+          <label>City</label>
+
+          <input type="text" name="city" class="form-control" ng-model="active_property.city"/>
+
+        </div>
+
+        <div class="form-group" ng-class="{ 'has-success': form.email.$valid && submitted,
+                                            'has-error': form.email.$invalid && submitted }">
+          <label>Tags</label>
+
+          <div listbox items="active_property.tags" options="tags"></div>
+
+        </div>
+
+        <div>
+          <button class="btn btn-primary btn-lg btn-login" type="submit">
+            Save
+          </button>
+          <button ng-if="!isNew()" class="btn btn-danger btn-lg btn-login" ng-click="Delete()">
+            Delete
+          </button>
+        </div>
+      </form>
+    </div>
+
+  </div>
+</div>

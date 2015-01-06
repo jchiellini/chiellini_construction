@@ -1,0 +1,61 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+<div class="container" ng-init="Init()">
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="listbox filter">
+        <div class="table_container full_width">
+          <div class="table_cell search">
+            <input class="form-control" ng-model="search.$" placeholder="Filter"/>
+          </div>
+          <div class="table_cell" style="width: 34px;">
+            <button class="btn btn-primary add_btn" ng-click="cache.GoToPage('/manage/property/')" ng-disabled="active_import == ''"><div class="glyphicon glyphicon-plus"></div></button>
+          </div>
+        </div>
+        <ul class="list-unstyled">
+          <li ng-repeat="property in cache.properties | filter:search" ng-class="{'selected':selected_property.id == property.id }" ng-click="SelectProperty(property)">
+            <div>
+              <span class="prima_nova_semibold">{{property.street}}</span>
+              <!--<div class="glyphicon glyphicon-remove pull-right" ng-click="remove(property)"></div>-->
+              <div class="glyphicon glyphicon-pencil pull-right margin_right_10" ng-click="cache.GoToPage('/manage/property/'+property.id)"></div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-sm-8">
+       <div>
+         <span class="title">{{selected_property.street}}</span>
+       </div>
+      <!--<div class="margin_top_10">-->
+         <!--<span class="prima_nova_semibold">City: </span><span>{{selected_property.city}}</span>-->
+      <!--</div>-->
+      <div>
+        <button class="btn btn-primary btn-login" ng-click="cache.GoToPage('/manage/content/')">
+          Add New Images
+        </button>
+      </div>
+      <!--<div class="margin_top_10 prima_nova_semibold">-->
+        <!--<span>Content:</span>-->
+      <!--</div>-->
+      <div class="margin_top_10">
+        <ul class="list-inline full_width">
+           <li class="no_padding margin_right_10 margin_bottom_10 click" ng-repeat="image in cache.content | filter:{property:selected_property.street}" ng-click="cache.GoToPage('/manage/content/'+image.id)">
+             <img style="width: 150px; height: 150px;" src="../../assets/images/{{image.image}}" />
+           </li>
+        </ul>
+      </div>
+
+      <div class="margin_top_10 prima_nova_semibold">
+        <span>Tags:</span>
+      </div>
+      <div>
+        <ul class="list-unstyled list-inline">
+          <li class="badge tag" ng-repeat="tag in selected_property.tags">
+            {{tag.label}}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+<div class="container" ng-init="Init()">
+  <div class="row">
+    <div class="col-sm-6 table_container table_fixed">
+      <div class="table_cell">
+        <label class="vertical_align_middle no_margin" style="font-size: 18px;">Results</label>
+      </div>
+      <div class="table_cell vertical_align_middle click"><div class="glyphicon glyphicon-play-circle margin_right_10" style="font-size: 22px; position: relative; top:6px;"></div><span>View Results As A Slideshow</span></div>
+    </div>
+    <div class="col-sm-6">
+      <angucomplete-alt id="ex1"
+                        placeholder="Enter a keyword"
+                        pause="100"
+                        selected-object="search"
+                        override-suggestions="true"
+                        local-data="cache.tags"
+                        search-fields="label"
+                        title-field="label"
+                        minlength="1"
+                        initial-value="{{query}}"
+                        input-class="form-control form-control-small"/>
+    </div>
+  </div>
+</div>

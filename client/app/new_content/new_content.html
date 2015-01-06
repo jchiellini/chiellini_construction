@@ -1,0 +1,56 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+<div class="container" ng-init="Init()">
+  <div class="row">
+    <div class="col-sm-6" ng-if="isNew()">
+      <form drop-zone action="/api/images" class="dropzone" id="file-dropzone" options="dropzoneConfig">
+      </form>
+      <button id="submit-all" class="btn btn-primary btn-block save_btn">Save</button>
+    </div>
+
+    <div class="col-sm-6" ng-if="!isNew()">
+      <img ng-src="../assets/images/house.jpg" class="full_width margin_bottom_10"/>
+    </div>
+
+    <div class="col-sm-6 information">
+      <form class="form" name="form" ng-submit="register(form)" novalidate>
+
+        <div class="form-group" ng-class="{ 'has-success': form.name.$valid && submitted,
+                                            'has-error': form.name.$invalid && submitted }">
+          <label>Property</label>
+
+          <select name="property" class="form-control click" ng-model="active_content.property" ng-options="property.street as property.street for property in cache.properties">
+
+          </select>
+
+        </div>
+
+        <div class="form-group" ng-class="{ 'has-success': form.name.$valid && submitted,
+                                            'has-error': form.name.$invalid && submitted }">
+          <label>Caption</label>
+
+          <input type="text" name="caption" class="form-control" ng-model="active_content.caption"/>
+
+        </div>
+
+        <div class="form-group" ng-class="{ 'has-success': form.email.$valid && submitted,
+                                            'has-error': form.email.$invalid && submitted }">
+          <label>Tags</label>
+
+          <div listbox items="active_content.tags" options="tags"></div>
+
+        </div>
+
+        <div>
+          <button class="btn btn-primary btn-lg btn-login" type="submit">
+            Save
+          </button>
+          <button class="btn btn-danger btn-lg btn-login" type="submit" ng-click="Delete()">
+            Delete
+          </button>
+        </div>
+      </form>
+    </div>
+
+  </div>
+</div>

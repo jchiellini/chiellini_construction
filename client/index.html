@@ -13,6 +13,8 @@
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(client) app/vendor.css -->
       <!-- bower:css -->
+      <link rel="stylesheet" href="bower_components/angularjs-toaster/toaster.css" />
+      <link rel="stylesheet" href="bower_components/angucomplete-alt/angucomplete-alt.css" />
       <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css({.tmp,client}) app/app.css -->
@@ -20,6 +22,7 @@
       <!-- injector:css -->
       <!-- endinjector -->
     <!-- endbuild -->
+    <link rel="stylesheet" href="assets/lib/dropzone.css">
   </head>
   <body ng-app="ccApp">
     <!--[if lt IE 7]>
@@ -27,6 +30,7 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
+    <toaster-container></toaster-container>
     <div ui-view=""></div>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
@@ -54,6 +58,9 @@
       <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
       <script src="bower_components/lodash/dist/lodash.compat.js"></script>
       <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+      <script src="bower_components/angular-animate/angular-animate.js"></script>
+      <script src="bower_components/angularjs-toaster/toaster.js"></script>
+      <script src="bower_components/angucomplete-alt/angucomplete-alt.js"></script>
       <!-- endbower -->
     <!-- endbuild -->
 
@@ -64,16 +71,30 @@
           <script src="app/account/login/login.controller.js"></script>
           <script src="app/account/settings/settings.controller.js"></script>
           <script src="app/account/signup/signup.controller.js"></script>
-          <script src="app/admin/admin.controller.js"></script>
-          <script src="app/admin/admin.js"></script>
+          <script src="app/dropzone/dropzone.directive.js"></script>
           <script src="app/main/main.controller.js"></script>
           <script src="app/main/main.js"></script>
+          <script src="app/manage/manage.controller.js"></script>
+          <script src="app/manage/manage.js"></script>
+          <script src="app/new_content/new_content.controller.js"></script>
+          <script src="app/new_content/new_content.js"></script>
+          <script src="app/new_property/new_property.controller.js"></script>
+          <script src="app/new_property/new_property.js"></script>
+          <script src="app/new_user/new_user.controller.js"></script>
+          <script src="app/new_user/new_user.js"></script>
+          <script src="app/results/results.controller.js"></script>
+          <script src="app/results/results.js"></script>
+          <script src="app/users/users.controller.js"></script>
+          <script src="app/users/users.js"></script>
           <script src="components/auth/auth.service.js"></script>
           <script src="components/auth/user.service.js"></script>
+          <script src="components/cache/cache.service.js"></script>
+          <script src="components/listbox/listbox.directive.js"></script>
           <script src="components/modal/modal.service.js"></script>
           <script src="components/mongoose-error/mongoose-error.directive.js"></script>
           <script src="components/navbar/navbar.controller.js"></script>
           <!-- endinjector -->
         <!-- endbuild -->
+    <script src="assets/lib/dropzone.min.js"></script>
 </body>
 </html>

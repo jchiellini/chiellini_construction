@@ -27,6 +27,7 @@ angular.module('ccApp')
         success(function(data) {
           $cookieStore.put('token', data.token);
           currentUser = User.get();
+          console.log(currentUser);
           deferred.resolve(data);
           return cb();
         }).
@@ -56,13 +57,15 @@ angular.module('ccApp')
        * @param  {Function} callback - optional
        * @return {Promise}
        */
-      createUser: function(user, callback) {
+      createUser: function(user,autologin, callback) {
         var cb = callback || angular.noop;
-
+        console.log("USER",user);
         return User.save(user,
           function(data) {
-            $cookieStore.put('token', data.token);
-            currentUser = User.get();
+            if(autologin){
+              $cookieStore.put('token', data.token);
+              currentUser = User.get();
+            }
             return cb(user);
           },
           function(err) {

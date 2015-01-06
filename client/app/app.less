@@ -17,7 +17,154 @@
 
 // injector
 @import 'account/login/login.less';
-@import 'admin/admin.less';
+@import 'dropzone/dropzone.less';
 @import 'main/main.less';
+@import 'manage/manage.less';
+@import 'new_content/new_content.less';
+@import 'new_property/new_property.less';
+@import 'new_user/new_user.less';
+@import 'results/results.less';
+@import 'users/users.less';
+@import 'listbox/listbox.less';
 @import 'modal/modal.less';
 // endinjector
+
+[ui-view]{
+  height: 65px;
+}
+
+[ui-view].ng-enter, [ui-view].ng-leave {
+  position: absolute;
+  left: 0;
+  right: 0;
+  -webkit-transition:all .5s ease-in-out;
+  -moz-transition:all .5s ease-in-out;
+  -o-transition:all .5s ease-in-out;
+  transition:all .5s ease-in-out;
+}
+
+[ui-view].ng-enter {
+  opacity: 0;
+  -webkit-transform:scale3d(0.5, 0.5, 0.5);
+  -moz-transform:scale3d(0.5, 0.5, 0.5);
+  transform:scale3d(0.5, 0.5, 0.5);
+}
+
+[ui-view].ng-enter-active {
+  opacity: 1;
+  -webkit-transform:scale3d(1, 1, 1);
+  -moz-transform:scale3d(1, 1, 1);
+  transform:scale3d(1, 1, 1);
+}
+
+[ui-view].ng-leave {
+  opacity: 1;
+  -webkit-transform:translate3d(0, 0, 0);
+  -moz-transform:translate3d(0, 0, 0);
+  transform:translate3d(0, 0, 0);
+}
+
+[ui-view].ng-leave-active {
+  opacity: 0;
+  -webkit-transform:translate3d(100px, 0, 0);
+  -moz-transform:translate3d(100px, 0, 0);
+  transform:translate3d(100px, 0, 0);
+}
+
+@font-face {
+  font-family : 'prima_nova_regular';
+  src: url('../assets/fonts/proximanova/ProximaNova-Reg.ttf');
+}
+
+.prima_nova_regular{
+  font-family: prima_nova_regular;
+}
+
+@font-face {
+  font-family : 'prima_nova_light';
+  src: url('../assets/fonts/proximanova/ProximaNova-Light.ttf');
+}
+
+.prima_nova_light{
+  font-family: prima_nova_light;
+}
+
+@font-face {
+  font-family : 'prima_nova_semibold';
+  src: url('../assets/fonts/proximanova/ProximaNova-Sbold.ttf');
+}
+
+.prima_nova_semibold{
+  font-family: prima_nova_semibold;
+}
+
+@font-face {
+  font-family : 'prima_nova_bold';
+  src: url('../assets/fonts/proximanova/ProximaNova-Bold.ttf');
+}
+
+.prima_nova_bold{
+  font-family: prima_nova_bold;
+}
+
+body{
+  font-family: prima_nova_regular;
+  color:#404040;
+}
+
+.container{
+  padding-bottom: 50px;
+}
+
+.navbar{
+  .container{
+    padding-bottom: 0;
+  }
+}
+
+.no_padding{
+  padding:0 !important;
+}
+
+.no_margin{
+  margin:0 !important;
+}
+
+.click{
+  cursor: pointer;
+}
+
+.vertical_align_middle{
+  vertical-align: middle;
+}
+
+.full_width{
+  width: 100% !important;
+}
+
+.table_container{
+  display: table;
+}
+
+.table_cell{
+  display: table-cell;
+}
+
+.table_fixed{
+  table-layout: fixed;
+}
+
+.margin_10{
+  margin:10px;
+}
+
+.logo_nav{
+  height: 40px;
+  margin-top:5px;
+  margin-left: 10px;
+  margin-right: 20px;
+}
+
+a:hover{
+  text-decoration: none;
+}

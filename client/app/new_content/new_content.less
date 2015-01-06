@@ -1,0 +1,41 @@
+.save_btn{
+  margin: 10px 0;
+}
+
+.listbox{
+  .form-control{
+    border-bottom-left-radius:0;
+    border-bottom-right-radius:0;
+  }
+  ul{
+    border: 1px solid #cccccc;
+    border-bottom-left-radius:4px;
+    border-bottom-right-radius:4px;
+    border-top: 0;
+    max-height: 100px;
+    height: 100px;
+    overflow-y: auto;
+    background-color: #FAFAFA;
+
+    li{
+      padding:5px 10px;
+      border-bottom: 1px solid #f0f0f0;
+      background-color: #ffffff;
+      .glyphicon{
+        cursor: pointer;
+        position: relative;
+        top:3px;
+        color: #59575a;
+      }
+      .glyphicon:active{
+        top:4px;
+      }
+    }
+
+    li:last-child{
+      border-bottom: 0 !important;
+      box-shadow: 0px 3px 3px rgba(136, 136, 136, 0.48);
+    }
+
+  }
+}

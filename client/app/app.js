@@ -4,8 +4,11 @@ angular.module('ccApp', [
   'ngCookies',
   'ngResource',
   'ngSanitize',
+  'ngAnimate',
   'ui.router',
-  'ui.bootstrap'
+  'ui.bootstrap',
+  'toaster',
+  'angucomplete-alt'
 ])
   .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
     $urlRouterProvider

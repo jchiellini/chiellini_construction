@@ -13,7 +13,7 @@ angular.module('ccApp')
           name: $scope.user.name,
           email: $scope.user.email,
           password: $scope.user.password
-        })
+        },true)
         .then( function() {
           // Account created, redirect to home
           $location.path('/');

@@ -2,15 +2,18 @@
 
 angular.module('ccApp')
   .controller('NavbarCtrl', function ($scope, $location, Auth) {
-    $scope.menu = [{
-      'title': 'Home',
-      'link': '/'
-    }];
 
     $scope.isCollapsed = true;
     $scope.isLoggedIn = Auth.isLoggedIn;
     $scope.isAdmin = Auth.isAdmin;
     $scope.getCurrentUser = Auth.getCurrentUser;
+
+    $scope.menu = [
+      {
+        'title': 'Gallery',
+        'link': '/'
+      }
+    ];
 
     $scope.logout = function() {
       Auth.logout();
